@@ -1,9 +1,10 @@
 class SummaryTranslationsController < ApplicationController
-  before_action :set_summary_translation, only: %i[ show update destroy ]
+  before_action :set_summary_translation, only: %i[show update destroy]
   before_action :authenticate_request
+
   # GET /summary_translations
   def index
-    @summary_translations = SummaryTranslation.all
+    @summary_translations = @current_user.summary_translations.all
 
     render json: @summary_translations
   end
@@ -39,13 +40,15 @@ class SummaryTranslationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_summary_translation
-      @summary_translation = SummaryTranslation.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def summary_translation_params
-      params.require(:summary_translation).permit(:image_record_id, :original_title, :translated_title, :original_body, :translated_body, :original_action, :translated_action, :original_language, :translation_language)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_summary_translation
+    @summary_translation = SummaryTranslation.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def summary_translation_params
+    params.require(:summary_translation).permit(:image_record_id, :original_title, :translated_title, :original_body,
+                                                :translated_body, :original_action, :translated_action, :original_language, :translation_language)
+  end
 end

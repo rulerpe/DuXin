@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show update destroy ]
-  skip_before_action :authenticate_request, only: [:create, :create_temp_user, :index, :show, :destroy]
+  before_action :set_user, only: %i[show update destroy]
+  skip_before_action :authenticate_request, only: %i[create create_temp_user index show destroy]
   include ActionController::Cookies
-  
+
   # GET /users
   def index
     @users = User.all
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   # GET /user_data
   def get_user_from_token
-    render json: { message: "User data", user: @current_user}
+    render json: { message: 'User data', user: @current_user }
   end
 
   # POST /users
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @user = User.find_or_initialize_by(phone_number: user_params[:phone_number])
 
     if @user.new_record? || @user.save
-      OtpVerificationService.new().start_verification(@user.phone_number)
+      OtpVerificationService.new.start_verification(@user.phone_number)
       render json: { message: 'Verification code sent. Please verify your phone number.', status: :ok }
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -40,8 +40,9 @@ class UsersController < ApplicationController
     @user.user_type = 'TEMP'
     if @user.save
       token = AuthenticationService.generate_jwt(@user.id)
-      cookies.signed[:auth_token] = {value: token, httponly: true, same_site: :none, secure: true, expires: 1.week.from_now}
-      render json: { message: "Temp user created.", token: token, user: @user }, status: :ok
+      cookies.signed[:auth_token] =
+        { value: token, httponly: true, same_site: :none, secure: true, expires: 1.week.from_now }
+      render json: { message: 'Temp user created.', token:, user: @user }, status: :ok
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -62,13 +63,14 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:phone_number)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def user_params
+    params.require(:user).permit(:phone_number)
+  end
 end

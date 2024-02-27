@@ -7,12 +7,14 @@ module ApplicationCable
     end
 
     private
-      def find_verified_user
-        if verified_user = AuthenticationService.get_user_from_token(request.headers['Authorization'], cookies.signed[:auth_token])
-          verified_user
-        else
-          reject_unauthorized_connection
-        end
+
+    def find_verified_user
+      if verified_user = AuthenticationService.get_user_from_token(request.headers['Authorization'],
+                                                                   cookies.signed[:auth_token])
+        verified_user
+      else
+        reject_unauthorized_connection
       end
+    end
   end
 end

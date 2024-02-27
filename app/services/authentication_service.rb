@@ -1,20 +1,18 @@
+# A service to get token from header(mobile) or httponly cookie(webapp)
 class AuthenticationService
-    def self.generate_jwt(user_id)
-        payload = { user_id: user_id, exp: 24.hours.from_now.to_i }
-        secret_key = Rails.application.credentials.jwt_secret_key
-        JWT.encode(payload, secret_key, 'HS256')
-    end
+  def self.generate_jwt(user_id)
+    payload = { user_id:, exp: 24.hours.from_now.to_i }
+    secret_key = Rails.application.credentials.jwt_secret_key
+    JWT.encode(payload, secret_key, 'HS256')
+  end
 
-    def self.get_user_from_token(authHeaders, authCookieToken)
-        token = token_from_header(authHeaders) ||  authCookieToken
-        decoded = JWT.decode(token, Rails.application.credentials.jwt_secret_key)[0]
-        current_user = User.find(decoded['user_id'])
-        current_user
-    end
+  def self.get_user_from_token(auth_headers, auth_cookie_token)
+    token = token_from_header(auth_headers) || auth_cookie_token
+    decoded = JWT.decode(token, Rails.application.credentials.jwt_secret_key)[0]
+    User.find(decoded['user_id'])
+  end
 
-    private
-    
-    def self.token_from_header(authHeaders)
-        authHeaders.split(' ').last if authHeaders.present?
-    end
+  def self.token_from_header(auth_headers)
+    auth_headers.split(' ').last if auth_headers.present?
+  end
 end
