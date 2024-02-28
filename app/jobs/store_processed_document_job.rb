@@ -18,5 +18,6 @@ class StoreProcessedDocumentJob < ApplicationJob
     ActionCable.server.broadcast("summary_translation_channel_#{user_id}",
                                  { stage: 'summary_translation_success', message: 'Summary translation success.',
                                    translated_json: })
+    # ActionCable.server.remote_connections.where("summary_translation_channel_#{user_id}").disconnect
   end
 end
