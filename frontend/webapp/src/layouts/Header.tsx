@@ -1,25 +1,29 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { User, GetUserResponse, CreateTempUserResponse } from '../types'
+import { User } from '../types'
 import { apiService } from '../services/apiService'
+import { useUser } from '../contexts/UserContext'
+import { isAxiosError } from 'axios'
 
 const Header = () => {
-  const [user, setUser] = useState<User>()
+  const { user, setUser } = useUser()
   useEffect(() => {
     const getUser = async () => {
       try {
-        const user = await apiService.getUser()
-        setUser(user.user)
+        const getUserResponse = await apiService.getUser()
+        console.log('getUserResponse.user', getUserResponse.user)
+        setUser(getUserResponse.user)
       } catch (error) {
-        const e = error as Error
-        console.log(`failed getuser ${e.message}`)
-        if (e.message.includes('Unauthorized')) {
+        // if no authuraized user if found, create a temp user account
+        if (isAxiosError(error) && error.response?.status === 401) {
           try {
-            const tempUser = await apiService.createTempUser()
-            setUser(tempUser.user)
+            const tempUserResponse = await apiService.createTempUser()
+            setUser(tempUserResponse.user)
           } catch (error) {
-            console.log('create temp user failed', error)
+            console.error('Failed to create temp user', error)
           }
+        } else {
+          console.error('Failed to fetch user', error)
         }
       }
     }

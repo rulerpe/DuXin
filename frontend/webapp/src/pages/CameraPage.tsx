@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Webcam from 'react-webcam'
 import imageCompression from 'browser-image-compression'
 import { apiService } from '../services/apiService'
@@ -7,6 +8,7 @@ const CameraPage = () => {
   const webcamRef = useRef<Webcam>(null)
   const [image, setImage] = useState('')
   const [uploading, setUploading] = useState(false)
+  const navigate = useNavigate()
 
   const capture = async (): Promise<void> => {
     const imageSrc = webcamRef.current?.getScreenshot()
@@ -53,6 +55,7 @@ const CameraPage = () => {
 
       const uploadImageResponse = await apiService.uploadImage(formData)
       console.log('upload image success', uploadImageResponse)
+      navigate('/summary')
     } catch (error) {
       console.log(error)
     } finally {

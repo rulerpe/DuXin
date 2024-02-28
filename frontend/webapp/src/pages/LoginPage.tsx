@@ -1,59 +1,33 @@
 import React, { useState } from 'react'
+import { useUser } from '../contexts/UserContext'
+import { apiService } from '../services/apiService'
 
 const LoginPage = () => {
   const [phoneNumber, setPhoneNumber] = useState('')
   const [otp, setOtp] = useState('')
   const [otpSent, setOtpSent] = useState(false)
+  const { user, setUser } = useUser()
 
-  const API_URL = 'https://localhost:3001'
-
+  // Create new user, and trigger OTP verfication
   const handlePhoneNumberSubmit = async (
     e: React.FormEvent<HTMLFormElement>,
   ) => {
     e.preventDefault()
-
-    const usersUrl = `${API_URL}/users`
-    const response = await fetch(usersUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        user: {
-          phone_number: phoneNumber,
-        },
-      }),
-      credentials: 'include',
-    })
-    if (!response.ok) {
-      throw new Error('Network response was not ok')
-    }
-    const responseJson = await response.json()
-    console.log(responseJson)
+    const response = await apiService.createUser(phoneNumber)
+    console.log(response)
     setOtpSent(true)
   }
 
+  // verify otp for new user account, if temp user was previously used
+  // send the temp user id alone, to transfer history to new user account.
   const handleOtpSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-
-    const verifyUrl = `${API_URL}/otp/verify`
-    const response = await fetch(verifyUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        phone_number: phoneNumber,
-        otp_code: otp,
-      }),
-      credentials: 'include',
-    })
-    if (!response.ok) {
-      throw new Error('Network response was not ok')
-    }
-    const responseJson = await response.json()
-    console.log(responseJson)
+    console.log('user', user)
+    const otpVerifyResponse = await apiService.OtpVerify(phoneNumber, otp, user)
+    console.log(otpVerifyResponse)
+    setUser(otpVerifyResponse.user)
   }
+
   return (
     <div>
       <h2>Login page</h2>

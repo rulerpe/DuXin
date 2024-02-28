@@ -18,3 +18,34 @@ export interface GetUserResponse {
   user: User
 }
 export interface CreateTempUserResponse extends GetUserResponse {}
+
+export interface OtpVerifPayload {
+  phone_number: string
+  otp_code: string
+  temp_uuid: string
+}
+export interface OtpVerifyResponse extends GetUserResponse {}
+
+export interface CreateUserResponse {
+  message: string
+}
+
+export interface TranslatedSummaryType {
+  title: string
+  body: string
+  action: string
+}
+
+export interface SummaryTranslationChannelMessage {
+  message: string
+  stage: keyof typeof STAGES
+  translated_json?: TranslatedSummaryType
+}
+
+export const STAGES: { [key: string]: string } = {
+  process_started: 'Process started',
+  text_extraction_completed: 'Text extraction completed',
+  summarizing_text_completed: 'Summarizing text completed',
+  translating_text_completed: 'Translating text completed',
+  summary_translation_success: 'Summary translation successful',
+}
