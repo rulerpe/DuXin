@@ -10,7 +10,7 @@ import { faChevronLeft, faUser } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const navigate = useNavigate();
-  const { user, setUser } = useUser();
+  const { setUser } = useUser();
   const { t, i18n } = useTranslation();
   useEffect(() => {
     const getUser = async () => {
