@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { isAxiosError } from 'axios';
 import { apiService } from '../services/apiService';
 import { useUser } from '../contexts/UserContext';
 import { useTranslation } from 'react-i18next';
 import styles from '../styles/Header.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faUser } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -38,25 +38,26 @@ const Header = () => {
     getUser();
   }, []);
   const onBack = () => {
-    console.log('onBack clicked');
     if (window.history.length > 1) {
       navigate(-1);
     } else {
       navigate('/');
     }
   };
-  const onMenu = () => {
-    console.log('menu clicked');
-  };
   return (
     <header className={styles.header}>
       <button onClick={onBack} className={styles.iconButton}>
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
-      <h1 className={styles.title}>{t('appName')}</h1>
-      <button onClick={onMenu} className={styles.iconButton}>
-        <FontAwesomeIcon icon={faBars} />
-      </button>
+      <Link to="/">
+        <h1 className={styles.title}>{t('appName')}</h1>
+      </Link>
+
+      <Link to="/login">
+        <button className={styles.iconButton}>
+          <FontAwesomeIcon icon={faUser} />
+        </button>
+      </Link>
     </header>
   );
 };

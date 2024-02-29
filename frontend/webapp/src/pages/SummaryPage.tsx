@@ -1,34 +1,46 @@
-import { apiService } from '../services/apiService';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { STAGES } from '../types';
 import useActionCable from '../hooks/useActionCable';
+import ProgressBar from '../components/ProgressBar';
+import Button from '../components/Button';
 
 const SummaryPage = () => {
+  const navigate = useNavigate();
   const { currentStage, translatedSummary } = useActionCable(
     'SummaryTranslationChannel',
   );
 
-  const getSummary = async () => {
-    const summaryResponse = await apiService.getSummary();
-    console.log(summaryResponse);
+  const { t } = useTranslation();
+
+  const handleButtonClick = () => {
+    navigate('/camera');
   };
 
   return (
-    <div>
-      <h2>Summary page</h2>
-      <h2>Process Status</h2>
-      <p>{STAGES[currentStage]}</p>
-      {currentStage === 'summary_translation_success' && translatedSummary && (
+    <>
+      {currentStage === 'summary_translation_completed' && translatedSummary ? (
         <>
-          <h3>Translated Summary</h3>
-          <ul>
-            <li>{translatedSummary?.title}</li>
-            <li>{translatedSummary?.body}</li>
-            <li>{translatedSummary?.action}</li>
-          </ul>
+          <h2>{t('summaryTitle')}</h2>
+          <p>{translatedSummary.title}</p>
+          <h2>{t('summaryBody')}</h2>
+          <p>{translatedSummary.body}</p>
+          <h2>{t('summaryAction')}</h2>
+          <p>{translatedSummary.action}</p>
+          <br />
+          <Button label={t('navigateToCamera')} onClick={handleButtonClick} />
+        </>
+      ) : (
+        <>
+          <ProgressBar
+            stages={Object.keys(STAGES)}
+            currentStage={STAGES[currentStage]}
+          />
+          <br />
+          <p>{t(`${currentStage}`)}</p>
         </>
       )}
-      <button onClick={getSummary}>Get Summary</button>
-    </div>
+    </>
   );
 };
 

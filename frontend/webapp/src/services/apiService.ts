@@ -50,8 +50,10 @@ export const apiService = {
     const payload: OtpVerifPayload = {
       phone_number: phoneNumber,
       otp_code: otpCode,
-      temp_uuid: tempUser?.user_type === 'TEMP' ? tempUser.phone_number : '',
     };
+    if (tempUser?.user_type === 'TEMP') {
+      payload.temp_uuid = tempUser.phone_number;
+    }
     const response = await axios.post<OtpVerifyResponse>(otpVerifyUrl, payload);
 
     return response.data;

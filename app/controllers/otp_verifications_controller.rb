@@ -21,10 +21,7 @@ class OtpVerificationsController < ApplicationController
       user.update(verified: true)
 
       # If temp_uuid exist, transfer image record to new account.
-      if params[:temp_uuid]
-        @temp_user = User.find_by(phone_number: params[:temp_uuid])
-        transfer_summary_translations(@temp_user, user)
-      end
+      transfer_summary_translations(pramas[:temp_uuid], user) if params[:temp_uuid].present?
 
       token = AuthenticationService.generate_jwt(user.id)
       cookies.signed[:auth_token] =
@@ -39,9 +36,11 @@ class OtpVerificationsController < ApplicationController
 
   private
 
-  def transfer_summary_translations(source_user, target_user)
+  def transfer_summary_translations(source_uuid, target_user)
     User.transaction do
-      source_user.summary_translations.update_all(user_id: target_user.id)
+      temp_user = User.find_by(phone_number: source_uuid)
+      temp_user.summary_translations.update_all(user_id: target_user.id)
+      temp_user.destroy
     end
   end
 end

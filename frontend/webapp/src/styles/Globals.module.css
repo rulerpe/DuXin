@@ -10,6 +10,7 @@
   --font-size-small: 20px;
   --font-size-medium: 24px;
   --font-size-large: 30px;
+  --error-color: #d32f2f;
 }
 
 body {
@@ -19,4 +20,14 @@ body {
 
 h2 {
   font-size: var(--font-size-large);
+}
+
+p {
+  font-size: var(--font-size-large);
+  margin: 0 0 5px 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

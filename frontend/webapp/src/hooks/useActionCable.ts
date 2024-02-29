@@ -11,7 +11,7 @@ const useActionCable = (
   params?: Record<string, unknown>,
 ) => {
   const [currentStage, setCurrentStage] =
-    useState<keyof typeof STAGES>('process_started');
+    useState<keyof typeof STAGES>('extracting_text');
   const [translatedSummary, setTranslatedSummary] =
     useState<TranslatedSummaryType | null>(null);
   useEffect(() => {
@@ -25,7 +25,7 @@ const useActionCable = (
           received(data: SummaryTranslationChannelMessage) {
             setCurrentStage(data.stage);
             if (
-              data.stage === 'summary_translation_success' &&
+              data.stage === 'summary_translation_completed' &&
               data.translated_json
             ) {
               setTranslatedSummary(data.translated_json);
