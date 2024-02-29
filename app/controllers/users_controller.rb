@@ -16,8 +16,17 @@ class UsersController < ApplicationController
   end
 
   # GET /user_data
-  def get_user_from_token
+  def user_from_token
     render json: { message: 'User data', user: @current_user }
+  end
+
+  # PUT /user_data
+  def update_user_from_token
+    if @current_user.update(user_params)
+      render json: { message: 'Update success', user: @current_user }
+    else
+      render json: @user.errors, status: :unprocessable_entity
+    end
   end
 
   # POST /users
@@ -71,6 +80,6 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(:phone_number)
+    params.require(:user).permit(:phone_number, :language)
   end
 end

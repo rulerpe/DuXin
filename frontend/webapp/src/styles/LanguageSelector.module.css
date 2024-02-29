@@ -1,0 +1,32 @@
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdown {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: var(--font-size-medium);
+  color: var(--text-color);
+  background-color: var(--secondary-background-color);
+  border: none;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  -moz-text-align: center;
+}
+option {
+  text-align: center;
+}
+.dropdownArrow {
+  pointer-events: none;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}

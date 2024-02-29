@@ -1,22 +1,20 @@
-import { BrowserRouter as Router } from 'react-router-dom'
-import Header from './layouts/Header'
-import Routes from './routes'
-import { UserProvider } from './contexts/UserContext'
-import './App.css'
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from './routes';
+import { UserProvider } from './contexts/UserContext';
+import Layout from './components/Layout';
+import 'normalize.css';
+import './utils/i18n';
 
 const App = () => {
   return (
     <UserProvider>
       <Router>
-        <div className="app">
-          <Header />
-          <main>
-            <Routes />
-          </main>
-        </div>
+        <Layout>
+          <Routes />
+        </Layout>
       </Router>
     </UserProvider>
-  )
-}
+  );
+};
 
-export default App
+export default App;

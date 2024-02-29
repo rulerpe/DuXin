@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   post '/otp/verify', to: 'otp_verifications#verify_user_otp'
-  get '/user_data', to: 'users#get_user_from_token'
+  get '/user_data', to: 'users#user_from_token'
+  put '/user_data', to: 'user#update_user_from_token'
   post '/temp_user', to: 'users#create_temp_user'
   post '/upload_image', to: 'images#upload'
 end

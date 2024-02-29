@@ -3,8 +3,9 @@ require 'langchain'
 # Translate the summary with OpenAI GPT
 # Using LangChain to format and get result in JSON
 class TranslationService
+  include ApplicationHelper
   def initialize(user_language, summarized_json)
-    @user_language = user_language
+    @language_name = language_name(user_language)
     @summarized_json = summarized_json
     llm_options = {
       temperature: 0.2,
@@ -50,7 +51,7 @@ class TranslationService
     prompt = Langchain::Prompt::PromptTemplate.new(template: prompt_template,
                                                    input_variables: %w[language title body action
                                                                        format_instructions])
-    prompt_text = prompt.format(language: @user_language,
+    prompt_text = prompt.format(language: @language_name,
                                 title: @summarized_json['title'],
                                 body: @summarized_json['body'],
                                 action: @summarized_json['action'],

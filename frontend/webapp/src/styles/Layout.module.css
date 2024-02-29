@@ -1,0 +1,21 @@
+.layout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--background-color);
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}

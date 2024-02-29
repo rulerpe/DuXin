@@ -1,0 +1,53 @@
+.webcam {
+  width: 100vw;
+  object-fit: cover;
+  /* flex-grow: 1; */
+}
+
+.buttonContainer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.captureButton {
+  border: none;
+  background-color: transparent;
+  padding: 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--primary-color);
+  box-shadow: 0 0 0 4px var(--primary-color);
+}
+
+.fileUploadButton,
+.fillerButton {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.fileInput {
+  display: none;
+}
+.fillerButton {
+  visibility: hidden;
+}
+
+.spinnerContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

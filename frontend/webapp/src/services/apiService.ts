@@ -8,6 +8,7 @@ import {
   OtpVerifPayload,
   OtpVerifyResponse,
   CreateUserResponse,
+  UpdateTempUserResponse,
 } from '../types';
 
 const BASE_URL = 'https://localhost:3001';
@@ -24,10 +25,13 @@ export const apiService = {
 
   // Start creating new user with phone number,
   // trigger back send OTP code to phone number.
-  async createUser(phoneNumber: string): Promise<CreateUserResponse> {
+  async createUser(
+    phoneNumber: string,
+    language: string,
+  ): Promise<CreateUserResponse> {
     const createUserUrl = `/users`;
     const payload = {
-      user: { phone_number: phoneNumber },
+      user: { phone_number: phoneNumber, language: language },
     };
     const response = await axios.post<CreateUserResponse>(
       createUserUrl,
@@ -53,14 +57,26 @@ export const apiService = {
     return response.data;
   },
 
-  async createTempUser(): Promise<CreateTempUserResponse> {
+  async createTempUser(language: string): Promise<CreateTempUserResponse> {
     const tempUserUrl = `/temp_user`;
     const tempUserId = uuidv4();
     const payload = {
-      user: { phone_number: tempUserId },
+      user: { phone_number: tempUserId, language: language },
     };
     const response = await axios.post<CreateTempUserResponse>(
       tempUserUrl,
+      payload,
+    );
+    return response.data;
+  },
+
+  async updateUserLanguage(language: string): Promise<UpdateTempUserResponse> {
+    const updateUserUrl = `/user_data`;
+    const payload = {
+      user: { language: language },
+    };
+    const response = await axios.put<UpdateTempUserResponse>(
+      updateUserUrl,
       payload,
     );
     return response.data;
