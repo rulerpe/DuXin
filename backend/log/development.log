@@ -17706,3 +17706,1040 @@ SummaryTranslationChannel transmitting {"stage"=>"translating_text", "message"=>
 [ActiveJob] [StoreProcessedDocumentJob] [bb076016-fc7a-4dab-a66c-cdc005bec438] [ActionCable] Broadcasting to summary_translation_channel_8: {:stage=>"summary_translation_completed", :message=>"Summary translation completed.", :translated_json=>{"title"=>"雪佛兰认证服务优惠", "body"=>"雪佛兰认证服务专家提供优惠的维护服务，并附带优惠券。立即预约，享受独家优惠。", "action"=>"在下次服务时携带附带的优惠券，并在购买时出示优惠券以获得折扣。"}}
 [ActiveJob] [StoreProcessedDocumentJob] [bb076016-fc7a-4dab-a66c-cdc005bec438] Performed StoreProcessedDocumentJob (Job ID: bb076016-fc7a-4dab-a66c-cdc005bec438) from Async(default) in 320.48ms
 SummaryTranslationChannel transmitting {"stage"=>"summary_translation_completed", "message"=>"Summary translation completed.", "translated_json"=>{"title"=>"雪佛兰认证服务优惠", "body"=>"雪佛兰认证服务专家提供优惠的维护服务，并附带优惠券。立即预约，享受独家优惠。", "action"=>"在下次服务时携带附带的优惠券，并在购买时出示优惠券以获得折扣。"}} (via streamed from summary_translation_channel_8)
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 03:44:53 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 247ms (Views: 2.4ms | ActiveRecord: 32.1ms | Allocations: 32430)
+
+
+Started PUT "/user_data" for 127.0.0.1 at 2024-03-01 03:45:10 -0800
+  
+ActionController::RoutingError (uninitialized constant UserController):
+  
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 03:46:05 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 756)
+
+
+Started PUT "/user_data" for 127.0.0.1 at 2024-03-01 03:46:17 -0800
+  
+ActionController::RoutingError (uninitialized constant UserController):
+  
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 03:46:54 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 134ms (Views: 0.5ms | ActiveRecord: 12.3ms | Allocations: 32414)
+
+
+Started PUT "/user_data" for 127.0.0.1 at 2024-03-01 03:46:57 -0800
+Processing by UsersController#update_user_from_token as HTML
+  Parameters: {"user"=>{"language"=>"en"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mUser Update (8.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "language" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-03-01 11:46:57.769417"], ["language", "en"], ["id", 8]]
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+Completed 200 OK in 39ms (Views: 1.1ms | ActiveRecord: 23.2ms | Allocations: 3499)
+
+
+Started PUT "/user_data" for 127.0.0.1 at 2024-03-01 03:47:01 -0800
+Processing by UsersController#update_user_from_token as HTML
+  Parameters: {"user"=>{"language"=>"zh"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mUser Update (2.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "language" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-03-01 11:47:01.913850"], ["language", "zh"], ["id", 8]]
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 6.6ms | Allocations: 2418)
+
+
+Started POST "/upload_image" for 127.0.0.1 at 2024-03-01 03:47:12 -0800
+Processing by ImagesController#upload as HTML
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fdafaa576c0 @tempfile=#<Tempfile:/tmp/RackMultipart20240301-18873-l2lpvz>, @content_type="image/jpeg", @original_filename="blob", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"blob\"\r\nContent-Type: image/jpeg\r\n">}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+[ActiveJob] Enqueued TextractJob (Job ID: f2855932-d100-4e65-8259-7b0b6b5ed0d1) to Async(default) with arguments: 8, "zh", "/tmp/RackMultipart20240301-18873-l2lpvz"
+[ActiveJob] ↳ app/controllers/images_controller.rb:7:in `upload'
+Completed 200 OK in 37ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 6624)
+
+
+[ActiveJob] [TextractJob] [f2855932-d100-4e65-8259-7b0b6b5ed0d1] Performing TextractJob (Job ID: f2855932-d100-4e65-8259-7b0b6b5ed0d1) from Async(default) enqueued at 2024-03-01T11:47:12.549334800Z with arguments: 8, "zh", "/tmp/RackMultipart20240301-18873-l2lpvz"
+[ActiveJob] [TextractJob] [f2855932-d100-4e65-8259-7b0b6b5ed0d1] [ActionCable] Broadcasting to summary_translation_channel_8: {:stage=>"extracting_text", :message=>"Extracting text from image"}
+Started GET "/cable" for ::1 at 2024-03-01 03:47:12 -0800
+Started GET "/cable" [WebSocket] for ::1 at 2024-03-01 03:47:12 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Registered connection (Z2lkOi8vZHV4aW4vVXNlci84)
+SummaryTranslationChannel is transmitting the subscription confirmation
+SummaryTranslationChannel is streaming from summary_translation_channel_8
+[ActiveJob] [TextractJob] [f2855932-d100-4e65-8259-7b0b6b5ed0d1] Error performing TextractJob (Job ID: f2855932-d100-4e65-8259-7b0b6b5ed0d1) from Async(default) in 4409.48ms: Aws::Textract::Errors::InvalidSignatureException (Signature expired: 20240301T114716Z is now earlier than 20240301T162233Z (20240301T162733Z - 5 min.)):
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/aws-sdk-core-3.191.3/lib/seahorse/client/plugins/raise_response_errors.rb:17:in `call'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/aws-sdk-core-3.191.3/lib/aws-sdk-core/plugins/checksum_algorithm.rb:111:in `call'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/aws-sdk-core-3.191.3/lib/aws-sdk-core/plugins/jsonvalue_converter.rb:16:in `call'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/aws-sdk-core-3.191.3/lib/aws-sdk-core/plugins/idempotency_token.rb:19:in `call'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/aws-sdk-core-3.191.3/lib/aws-sdk-core/plugins/param_converter.rb:26:in `call'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/aws-sdk-core-3.191.3/lib/seahorse/client/plugins/request_callback.rb:89:in `call'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/aws-sdk-core-3.191.3/lib/aws-sdk-core/plugins/response_paging.rb:12:in `call'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/aws-sdk-core-3.191.3/lib/seahorse/client/plugins/response_target.rb:24:in `call'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/aws-sdk-core-3.191.3/lib/seahorse/client/request.rb:72:in `send_request'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/aws-sdk-textract-1.56.0/lib/aws-sdk-textract/client.rb:1121:in `detect_document_text'
+/home/rulerpe/duxin/backend/app/services/textract_service.rb:17:in `call'
+/home/rulerpe/duxin/backend/app/jobs/textract_job.rb:8:in `perform'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/execution.rb:69:in `block in _perform_job'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/i18n-1.14.1/lib/i18n.rb:322:in `with_locale'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `instance_exec'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/core_ext/time/zones.rb:65:in `use_zone'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `instance_exec'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/execution.rb:68:in `_perform_job'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/instrumentation.rb:32:in `_perform_job'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/execution.rb:52:in `perform_now'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/instrumentation.rb:26:in `block in perform_now'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activerecord-7.1.3.2/lib/active_record/railties/job_runtime.rb:13:in `block in instrument'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/instrumentation.rb:40:in `block in instrument'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/notifications.rb:206:in `block in instrument'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/notifications.rb:206:in `instrument'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/instrumentation.rb:39:in `instrument'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activerecord-7.1.3.2/lib/active_record/railties/job_runtime.rb:11:in `instrument'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/instrumentation.rb:26:in `perform_now'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/logging.rb:18:in `block in perform_now'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:135:in `block in tagged'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:39:in `tagged'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:135:in `tagged'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/broadcast_logger.rb:240:in `method_missing'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/logging.rb:25:in `tag_logger'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/logging.rb:18:in `perform_now'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/execution.rb:30:in `block in execute'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/railtie.rb:67:in `block (4 levels) in <class:Railtie>'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/reloader.rb:77:in `block in wrap'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/reloader.rb:74:in `wrap'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/railtie.rb:66:in `block (3 levels) in <class:Railtie>'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `instance_exec'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/execution.rb:28:in `execute'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+<internal:kernel>:187:in `loop'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Started POST "/upload_image" for 127.0.0.1 at 2024-03-01 08:28:47 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ImagesController#upload as HTML
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f7592e9c7d0 @tempfile=#<Tempfile:/tmp/RackMultipart20240301-19214-ekqbct>, @content_type="image/jpeg", @original_filename="blob", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"blob\"\r\nContent-Type: image/jpeg\r\n">}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+[ActiveJob] Enqueued TextractJob (Job ID: 59e1369b-932f-4597-b607-ec04ec7739c5) to Async(default) with arguments: 8, "zh", "/tmp/RackMultipart20240301-19214-ekqbct"
+[ActiveJob] ↳ app/controllers/images_controller.rb:7:in `upload'
+Completed 200 OK in 301ms (Views: 1.2ms | ActiveRecord: 14.9ms | Allocations: 38121)
+
+
+[ActiveJob] [TextractJob] [59e1369b-932f-4597-b607-ec04ec7739c5] Performing TextractJob (Job ID: 59e1369b-932f-4597-b607-ec04ec7739c5) from Async(default) enqueued at 2024-03-01T16:28:48.171336300Z with arguments: 8, "zh", "/tmp/RackMultipart20240301-19214-ekqbct"
+[ActiveJob] [TextractJob] [59e1369b-932f-4597-b607-ec04ec7739c5] [ActionCable] Broadcasting to summary_translation_channel_8: {:stage=>"extracting_text", :message=>"Extracting text from image"}
+Started GET "/cable" for ::1 at 2024-03-01 08:28:48 -0800
+Started GET "/cable" [WebSocket] for ::1 at 2024-03-01 08:28:48 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Registered connection (Z2lkOi8vZHV4aW4vVXNlci84)
+SummaryTranslationChannel is transmitting the subscription confirmation
+SummaryTranslationChannel is streaming from summary_translation_channel_8
+[ActiveJob] [TextractJob] [59e1369b-932f-4597-b607-ec04ec7739c5] Enqueued SummaryJob (Job ID: 5143f93b-9e97-4753-acc7-35a3b06d7b73) to Async(default) with arguments: 8, "zh", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002"
+[ActiveJob] [TextractJob] [59e1369b-932f-4597-b607-ec04ec7739c5] ↳ app/jobs/textract_job.rb:10:in `perform'
+[ActiveJob] [TextractJob] [59e1369b-932f-4597-b607-ec04ec7739c5] Performed TextractJob (Job ID: 59e1369b-932f-4597-b607-ec04ec7739c5) from Async(default) in 2562.98ms
+[ActiveJob] [SummaryJob] [5143f93b-9e97-4753-acc7-35a3b06d7b73] Performing SummaryJob (Job ID: 5143f93b-9e97-4753-acc7-35a3b06d7b73) from Async(default) enqueued at 2024-03-01T16:28:50.745873300Z with arguments: 8, "zh", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002"
+[ActiveJob] [SummaryJob] [5143f93b-9e97-4753-acc7-35a3b06d7b73] [ActionCable] Broadcasting to summary_translation_channel_8: {:stage=>"summarizing_text", :message=>"Summarizing text."}
+SummaryTranslationChannel transmitting {"stage"=>"summarizing_text", "message"=>"Summarizing text."} (via streamed from summary_translation_channel_8)
+[ActiveJob] [SummaryJob] [5143f93b-9e97-4753-acc7-35a3b06d7b73] Enqueued TranslationJob (Job ID: 7351e4af-89df-4482-beb4-edaf1ff5fb08) to Async(default) with arguments: 8, "zh", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002", {"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient needs to pay the amount due by the specified due date through online, authorized locations, phone, or mail."}
+[ActiveJob] [SummaryJob] [5143f93b-9e97-4753-acc7-35a3b06d7b73] ↳ app/jobs/summary_job.rb:10:in `perform'
+[ActiveJob] [SummaryJob] [5143f93b-9e97-4753-acc7-35a3b06d7b73] Performed SummaryJob (Job ID: 5143f93b-9e97-4753-acc7-35a3b06d7b73) from Async(default) in 2140.02ms
+[ActiveJob] [TranslationJob] [7351e4af-89df-4482-beb4-edaf1ff5fb08] Performing TranslationJob (Job ID: 7351e4af-89df-4482-beb4-edaf1ff5fb08) from Async(default) enqueued at 2024-03-01T16:28:52.895247600Z with arguments: 8, "zh", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002", {"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient needs to pay the amount due by the specified due date through online, authorized locations, phone, or mail."}
+[ActiveJob] [TranslationJob] [7351e4af-89df-4482-beb4-edaf1ff5fb08] [ActionCable] Broadcasting to summary_translation_channel_8: {:stage=>"translating_text", :message=>"Translating text."}
+SummaryTranslationChannel transmitting {"stage"=>"translating_text", "message"=>"Translating text."} (via streamed from summary_translation_channel_8)
+[ActiveJob] [TranslationJob] [7351e4af-89df-4482-beb4-edaf1ff5fb08] Enqueued StoreProcessedDocumentJob (Job ID: 02d72988-af23-4d6d-a029-62ca552e9dc2) to Async(default) with arguments: 8, "zh", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002", {"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient needs to pay the amount due by the specified due date through online, authorized locations, phone, or mail."}, {"title"=>"NVEnergy Bill Summary", "body"=>"该信函提供了收件人的电力使用历史、当前账单金额和付款选项的摘要。", "action"=>"收件人需要在指定的截止日期之前通过在线、授权地点、电话或邮件支付到期金额。"}
+[ActiveJob] [TranslationJob] [7351e4af-89df-4482-beb4-edaf1ff5fb08] ↳ app/jobs/translation_job.rb:10:in `perform'
+[ActiveJob] [TranslationJob] [7351e4af-89df-4482-beb4-edaf1ff5fb08] Performed TranslationJob (Job ID: 7351e4af-89df-4482-beb4-edaf1ff5fb08) from Async(default) in 2480.54ms
+[ActiveJob] [StoreProcessedDocumentJob] [02d72988-af23-4d6d-a029-62ca552e9dc2] Performing StoreProcessedDocumentJob (Job ID: 02d72988-af23-4d6d-a029-62ca552e9dc2) from Async(default) enqueued at 2024-03-01T16:28:55.389520200Z with arguments: 8, "zh", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002", {"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient needs to pay the amount due by the specified due date through online, authorized locations, phone, or mail."}, {"title"=>"NVEnergy Bill Summary", "body"=>"该信函提供了收件人的电力使用历史、当前账单金额和付款选项的摘要。", "action"=>"收件人需要在指定的截止日期之前通过在线、授权地点、电话或邮件支付到期金额。"}
+[ActiveJob] [StoreProcessedDocumentJob] [02d72988-af23-4d6d-a029-62ca552e9dc2]   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob] [StoreProcessedDocumentJob] [02d72988-af23-4d6d-a029-62ca552e9dc2]   ↳ app/jobs/store_processed_document_job.rb:7:in `perform'
+[ActiveJob] [StoreProcessedDocumentJob] [02d72988-af23-4d6d-a029-62ca552e9dc2]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [StoreProcessedDocumentJob] [02d72988-af23-4d6d-a029-62ca552e9dc2]   ↳ app/jobs/store_processed_document_job.rb:8:in `perform'
+[ActiveJob] [StoreProcessedDocumentJob] [02d72988-af23-4d6d-a029-62ca552e9dc2]   [1m[36mSummaryTranslation Create (5.9ms)[0m  [1m[32mINSERT INTO "summary_translations" ("original_title", "translated_title", "original_body", "translated_body", "original_action", "translated_action", "original_language", "translation_language", "created_at", "updated_at", "user_id", "extracted_text") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["original_title", "NVEnergy Bill Summary"], ["translated_title", "NVEnergy Bill Summary"], ["original_body", "The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options."], ["translated_body", "该信函提供了收件人的电力使用历史、当前账单金额和付款选项的摘要。"], ["original_action", "The recipient needs to pay the amount due by the specified due date through online, authorized locations, phone, or mail."], ["translated_action", "收件人需要在指定的截止日期之前通过在线、授权地点、电话或邮件支付到期金额。"], ["original_language", nil], ["translation_language", "zh"], ["created_at", "2024-03-01 16:28:55.578490"], ["updated_at", "2024-03-01 16:28:55.578490"], ["user_id", 8], ["extracted_text", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002"]]
+[ActiveJob] [StoreProcessedDocumentJob] [02d72988-af23-4d6d-a029-62ca552e9dc2]   ↳ app/jobs/store_processed_document_job.rb:8:in `perform'
+[ActiveJob] [StoreProcessedDocumentJob] [02d72988-af23-4d6d-a029-62ca552e9dc2]   [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [StoreProcessedDocumentJob] [02d72988-af23-4d6d-a029-62ca552e9dc2]   ↳ app/jobs/store_processed_document_job.rb:8:in `perform'
+[ActiveJob] [StoreProcessedDocumentJob] [02d72988-af23-4d6d-a029-62ca552e9dc2] [ActionCable] Broadcasting to summary_translation_channel_8: {:stage=>"summary_translation_completed", :message=>"Summary translation completed.", :translated_json=>{"title"=>"NVEnergy Bill Summary", "body"=>"该信函提供了收件人的电力使用历史、当前账单金额和付款选项的摘要。", "action"=>"收件人需要在指定的截止日期之前通过在线、授权地点、电话或邮件支付到期金额。"}}
+[ActiveJob] [StoreProcessedDocumentJob] [02d72988-af23-4d6d-a029-62ca552e9dc2] Performed StoreProcessedDocumentJob (Job ID: 02d72988-af23-4d6d-a029-62ca552e9dc2) from Async(default) in 186.96ms
+SummaryTranslationChannel transmitting {"stage"=>"summary_translation_completed", "message"=>"Summary translation completed.", "translated_json"=>{"title"=>"NVEnergy Bill Summary", "body"=>"该信函提供了收件人的电力使用历史、当前账单金额和付款选项的摘要。", "action"=>"收件人需要在指定的截止日期之前通过在线、授权地点、电话或邮件支付到期金额。"}} (via streamed from summary_translation_channel_8)
+Unsubscribing from channel: {"channel":"SummaryTranslationChannel"}
+SummaryTranslationChannel stopped streaming from summary_translation_channel_8
+Finished "/cable" [WebSocket] for ::1 at 2024-03-01 08:29:00 -0800
+Started GET "/login" for 127.0.0.1 at 2024-03-01 08:29:18 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 194)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:29:18 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-03-01 08:29:45 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 110)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:29:45 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-03-01 08:29:55 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 110)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:29:55 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 08:30:20 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"summary"}
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 110)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:30:20 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 08:31:14 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"summary"}
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 239)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:31:14 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 08:32:00 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"summary"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 124)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:32:00 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 08:33:03 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"user_data"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 42)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 08:36:52 -0800
+Processing by UsersController#user_from_token as HTML
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 271)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 08:36:53 -0800
+Processing by UsersController#user_from_token as HTML
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 113)
+
+
+Started POST "/temp_user" for 127.0.0.1 at 2024-03-01 08:36:53 -0800
+Started POST "/temp_user" for 127.0.0.1 at 2024-03-01 08:36:53 -0800
+Processing by UsersController#create_temp_user as HTML
+  Parameters: {"user"=>{"phone_number"=>"3bcde34b-ef0f-43a0-b999-00e0106c5746", "language"=>"zh"}}
+Processing by UsersController#create_temp_user as HTML
+  Parameters: {"user"=>{"phone_number"=>"cf692dc9-29a5-42bc-b962-c4c5ac292d9c", "language"=>"zh"}}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+  [1m[36mUser Exists? (4.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "3bcde34b-ef0f-43a0-b999-00e0106c5746"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+  [1m[36mUser Create (3.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username", "phone_number", "verified", "failed_attempts", "locked_at", "user_type", "document_count", "language") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", nil], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-01 16:36:53.694334"], ["updated_at", "2024-03-01 16:36:53.694334"], ["username", nil], ["phone_number", "3bcde34b-ef0f-43a0-b999-00e0106c5746"], ["verified", false], ["failed_attempts", 0], ["locked_at", nil], ["user_type", "TEMP"], ["document_count", 0], ["language", "zh"]]
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+Completed 200 OK in 42ms (Views: 0.6ms | ActiveRecord: 18.5ms | Allocations: 12016)
+
+
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+  [1m[36mUser Exists? (5.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "cf692dc9-29a5-42bc-b962-c4c5ac292d9c"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username", "phone_number", "verified", "failed_attempts", "locked_at", "user_type", "document_count", "language") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", nil], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-01 16:36:53.717265"], ["updated_at", "2024-03-01 16:36:53.717265"], ["username", nil], ["phone_number", "cf692dc9-29a5-42bc-b962-c4c5ac292d9c"], ["verified", false], ["failed_attempts", 0], ["locked_at", nil], ["user_type", "TEMP"], ["document_count", 0], ["language", "zh"]]
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+Completed 200 OK in 55ms (Views: 0.7ms | ActiveRecord: 30.7ms | Allocations: 13396)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 08:37:10 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 982)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 08:37:10 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 752)
+
+
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 08:38:00 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"summary"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 733)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:38:01 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 08:38:30 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"summary"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 659)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:38:30 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 08:38:45 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"summary"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 672)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:38:45 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 08:38:59 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"summary"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 114)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:38:59 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 08:39:24 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"summary"}
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 40)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:39:24 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 08:41:42 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"summary"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 40)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:41:42 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 08:41:50 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"summary"}
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2352)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:41:50 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-03-01 08:42:09 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 42)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:42:09 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-03-01 08:46:31 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2414)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:46:31 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-03-01 08:47:15 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 175)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:47:15 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 08:47:23 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 136ms (Views: 0.6ms | ActiveRecord: 14.8ms | Allocations: 30177)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-03-01 08:47:35 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2414)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:47:35 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-03-01 08:48:28 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2411)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:48:28 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 08:48:46 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 186ms (Views: 0.7ms | ActiveRecord: 16.8ms | Allocations: 30212)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 08:49:07 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 11ms (Views: 2.0ms | ActiveRecord: 0.8ms | Allocations: 754)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 08:49:36 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 23ms (Views: 0.5ms | ActiveRecord: 5.0ms | Allocations: 7513)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-03-01 08:49:56 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 163)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:49:56 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-03-01 08:55:25 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2354)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:55:25 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-03-01 08:56:04 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 126)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 08:56:04 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-03-01 09:01:54 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2363)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 09:01:54 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-03-01 09:06:52 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 125)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 09:06:52 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-03-01 09:06:59 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2363)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 09:07:00 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-03-01 09:09:05 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 179)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 09:09:05 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-03-01 09:10:44 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"login"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 178)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 09:10:44 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 09:10:58 -0800
+Processing by FrontendController#index as HTML
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 103)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 09:10:58 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 09:11:11 -0800
+Processing by FrontendController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 177)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 09:11:12 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 09:11:27 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FrontendController#index as HTML
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2419)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 09:11:27 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 09:11:48 -0800
+Processing by FrontendController#index as HTML
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 178)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 09:11:48 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 09:11:55 -0800
+Processing by FrontendController#index as HTML
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 179)
+
+
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 09:12:11 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FrontendController#index as HTML
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2416)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 09:12:11 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 09:13:39 -0800
+Processing by FrontendController#index as HTML
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 181)
+
+
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 09:16:58 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"summary"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 259ms (Views: 0.2ms | ActiveRecord: 17.8ms | Allocations: 30001)
+
+
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 09:19:26 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"summary"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 178)
+
+
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 09:20:44 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"summary"}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 103)
+
+
+Started GET "/summary" for 127.0.0.1 at 2024-03-01 09:21:09 -0800
+Processing by FrontendController#index as HTML
+  Parameters: {"path"=>"summary"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 104)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-01 09:21:09 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:26:14 -0800
+Processing by UsersController#user_from_token as HTML
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 337)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:26:14 -0800
+Processing by UsersController#user_from_token as HTML
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 113)
+
+
+Started POST "/temp_user" for 127.0.0.1 at 2024-03-01 09:26:14 -0800
+Started POST "/temp_user" for 127.0.0.1 at 2024-03-01 09:26:14 -0800
+Processing by UsersController#create_temp_user as HTML
+Processing by UsersController#create_temp_user as HTML
+  Parameters: {"user"=>{"phone_number"=>"cfca1440-aba4-4605-9269-aa83bb22d8a8", "language"=>"zh"}}
+  Parameters: {"user"=>{"phone_number"=>"bfac8d06-329e-45b3-8899-edf8439d3ba3", "language"=>"zh"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+  [1m[36mUser Exists? (4.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "cfca1440-aba4-4605-9269-aa83bb22d8a8"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+  [1m[36mUser Create (2.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username", "phone_number", "verified", "failed_attempts", "locked_at", "user_type", "document_count", "language") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", nil], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-01 17:26:14.987341"], ["updated_at", "2024-03-01 17:26:14.987341"], ["username", nil], ["phone_number", "cfca1440-aba4-4605-9269-aa83bb22d8a8"], ["verified", false], ["failed_attempts", 0], ["locked_at", nil], ["user_type", "TEMP"], ["document_count", 0], ["language", "zh"]]
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+Completed 200 OK in 66ms (Views: 1.5ms | ActiveRecord: 28.9ms | Allocations: 15616)
+
+
+  [1m[36mUser Exists? (7.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "bfac8d06-329e-45b3-8899-edf8439d3ba3"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username", "phone_number", "verified", "failed_attempts", "locked_at", "user_type", "document_count", "language") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", nil], ["password_digest", "[FILTERED]"], ["created_at", "2024-03-01 17:26:15.008358"], ["updated_at", "2024-03-01 17:26:15.008358"], ["username", nil], ["phone_number", "bfac8d06-329e-45b3-8899-edf8439d3ba3"], ["verified", false], ["failed_attempts", 0], ["locked_at", nil], ["user_type", "TEMP"], ["document_count", 0], ["language", "zh"]]
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:50:in `create_temp_user'
+Completed 200 OK in 76ms (Views: 0.4ms | ActiveRecord: 73.2ms | Allocations: 16666)
+
+
+Started PUT "/user_data" for 127.0.0.1 at 2024-03-01 09:26:20 -0800
+Processing by UsersController#update_user_from_token as HTML
+  Parameters: {"user"=>{"language"=>"en"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mUser Update (2.9ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "language" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-03-01 17:26:20.251487"], ["language", "en"], ["id", 35]]
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+Completed 200 OK in 31ms (Views: 0.5ms | ActiveRecord: 16.8ms | Allocations: 3059)
+
+
+Started PUT "/user_data" for 127.0.0.1 at 2024-03-01 09:26:24 -0800
+Processing by UsersController#update_user_from_token as HTML
+  Parameters: {"user"=>{"language"=>"zh"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mUser Update (2.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "language" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-03-01 17:26:24.077158"], ["language", "zh"], ["id", 35]]
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+Completed 200 OK in 16ms (Views: 0.7ms | ActiveRecord: 6.6ms | Allocations: 2449)
+
+
+Started POST "/upload_image" for 127.0.0.1 at 2024-03-01 09:26:31 -0800
+Processing by ImagesController#upload as HTML
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f212a0107f0 @tempfile=#<Tempfile:/tmp/RackMultipart20240301-26371-m4hnnl>, @content_type="image/jpeg", @original_filename="blob", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"blob\"\r\nContent-Type: image/jpeg\r\n">}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+[ActiveJob] Enqueued TextractJob (Job ID: ff668ca5-34ef-4eb2-97f2-86896080bcb4) to Async(default) with arguments: 35, "zh", "/tmp/RackMultipart20240301-26371-m4hnnl"
+[ActiveJob] ↳ app/controllers/images_controller.rb:7:in `upload'
+Completed 200 OK in 44ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 6606)
+
+
+[ActiveJob] [TextractJob] [ff668ca5-34ef-4eb2-97f2-86896080bcb4] Performing TextractJob (Job ID: ff668ca5-34ef-4eb2-97f2-86896080bcb4) from Async(default) enqueued at 2024-03-01T17:26:31.388217200Z with arguments: 35, "zh", "/tmp/RackMultipart20240301-26371-m4hnnl"
+[ActiveJob] [TextractJob] [ff668ca5-34ef-4eb2-97f2-86896080bcb4] [ActionCable] Broadcasting to summary_translation_channel_35: {:stage=>"extracting_text", :message=>"Extracting text from image"}
+Started GET "/cable" for ::1 at 2024-03-01 09:26:31 -0800
+Started GET "/cable" for 127.0.0.1 at 2024-03-01 09:26:31 -0800
+Started GET "/cable" [WebSocket] for ::1 at 2024-03-01 09:26:31 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Registered connection (Z2lkOi8vZHV4aW4vVXNlci8zNQ)
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2024-03-01 09:26:31 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Registered connection (Z2lkOi8vZHV4aW4vVXNlci8zNQ)
+SummaryTranslationChannel is transmitting the subscription confirmation
+SummaryTranslationChannel is streaming from summary_translation_channel_35
+[ActiveJob] [TextractJob] [ff668ca5-34ef-4eb2-97f2-86896080bcb4] Enqueued SummaryJob (Job ID: 06e5e7f0-2ede-4ef5-867c-849062d48ea1) to Async(default) with arguments: 35, "zh", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002"
+[ActiveJob] [TextractJob] [ff668ca5-34ef-4eb2-97f2-86896080bcb4] ↳ app/jobs/textract_job.rb:10:in `perform'
+[ActiveJob] [TextractJob] [ff668ca5-34ef-4eb2-97f2-86896080bcb4] Performed TextractJob (Job ID: ff668ca5-34ef-4eb2-97f2-86896080bcb4) from Async(default) in 2398.95ms
+[ActiveJob] [SummaryJob] [06e5e7f0-2ede-4ef5-867c-849062d48ea1] Performing SummaryJob (Job ID: 06e5e7f0-2ede-4ef5-867c-849062d48ea1) from Async(default) enqueued at 2024-03-01T17:26:33.791021000Z with arguments: 35, "zh", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002"
+[ActiveJob] [SummaryJob] [06e5e7f0-2ede-4ef5-867c-849062d48ea1] [ActionCable] Broadcasting to summary_translation_channel_35: {:stage=>"summarizing_text", :message=>"Summarizing text."}
+SummaryTranslationChannel transmitting {"stage"=>"summarizing_text", "message"=>"Summarizing text."} (via streamed from summary_translation_channel_35)
+[ActiveJob] [SummaryJob] [06e5e7f0-2ede-4ef5-867c-849062d48ea1] Enqueued TranslationJob (Job ID: 483366cb-2a19-4b98-bcde-68d8d6f18e19) to Async(default) with arguments: 35, "zh", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002", {"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient needs to review the bill details, make the payment of $104.70 by the due date of July 7, 2015, and consider signing up for paperless billing at nvenergy.com/paymyway."}
+[ActiveJob] [SummaryJob] [06e5e7f0-2ede-4ef5-867c-849062d48ea1] ↳ app/jobs/summary_job.rb:10:in `perform'
+[ActiveJob] [SummaryJob] [06e5e7f0-2ede-4ef5-867c-849062d48ea1] Performed SummaryJob (Job ID: 06e5e7f0-2ede-4ef5-867c-849062d48ea1) from Async(default) in 2772.32ms
+[ActiveJob] [TranslationJob] [483366cb-2a19-4b98-bcde-68d8d6f18e19] Performing TranslationJob (Job ID: 483366cb-2a19-4b98-bcde-68d8d6f18e19) from Async(default) enqueued at 2024-03-01T17:26:36.563037100Z with arguments: 35, "zh", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002", {"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient needs to review the bill details, make the payment of $104.70 by the due date of July 7, 2015, and consider signing up for paperless billing at nvenergy.com/paymyway."}
+[ActiveJob] [TranslationJob] [483366cb-2a19-4b98-bcde-68d8d6f18e19] [ActionCable] Broadcasting to summary_translation_channel_35: {:stage=>"translating_text", :message=>"Translating text."}
+SummaryTranslationChannel transmitting {"stage"=>"translating_text", "message"=>"Translating text."} (via streamed from summary_translation_channel_35)
+[ActiveJob] [TranslationJob] [483366cb-2a19-4b98-bcde-68d8d6f18e19] Error performing TranslationJob (Job ID: 483366cb-2a19-4b98-bcde-68d8d6f18e19) from Async(default) in 2952.63ms: Langchain::OutputParsers::OutputParserException (Failed to parse. Text: "```json
+{
+    "title": "NVEnergy Bill Summary",
+    "body": "该信函提供了收件人的电力使用历史、当前账单金额和付款选项的摘要。",
+    "action": "收件人需要查看账单详细信息，在2015年7月7日到期前支付104.70美元，并考虑在nvenergy.com/paymyway上注册无纸化账单。",
+    "required": ["title", "body", "action"]
+}
+```". Error: The property '#/' contains additional properties ["required"] outside of the schema when none are allowed in schema af961c83-d41d-5d25-ac7d-78160502856e
+Text: ```json
+{
+    "title": "NVEnergy Bill Summary",
+    "body": "该信函提供了收件人的电力使用历史、当前账单金额和付款选项的摘要。",
+    "action": "收件人需要查看账单详细信息，在2015年7月7日到期前支付104.70美元，并考虑在nvenergy.com/paymyway上注册无纸化账单。",
+    "required": ["title", "body", "action"]
+}
+```):
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/langchainrb-0.9.3/lib/langchain/output_parsers/structured_output_parser.rb:78:in `rescue in parse'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/langchainrb-0.9.3/lib/langchain/output_parsers/structured_output_parser.rb:72:in `parse'
+/home/rulerpe/duxin/backend/app/services/translation_service.rb:62:in `call'
+/home/rulerpe/duxin/backend/app/jobs/translation_job.rb:8:in `perform'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/execution.rb:69:in `block in _perform_job'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/i18n-1.14.1/lib/i18n.rb:322:in `with_locale'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `instance_exec'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/core_ext/time/zones.rb:65:in `use_zone'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `instance_exec'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/execution.rb:68:in `_perform_job'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/instrumentation.rb:32:in `_perform_job'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/execution.rb:52:in `perform_now'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/instrumentation.rb:26:in `block in perform_now'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activerecord-7.1.3.2/lib/active_record/railties/job_runtime.rb:13:in `block in instrument'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/instrumentation.rb:40:in `block in instrument'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/notifications.rb:206:in `block in instrument'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/notifications.rb:206:in `instrument'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/instrumentation.rb:39:in `instrument'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activerecord-7.1.3.2/lib/active_record/railties/job_runtime.rb:11:in `instrument'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/instrumentation.rb:26:in `perform_now'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/logging.rb:18:in `block in perform_now'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:135:in `block in tagged'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:39:in `tagged'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:135:in `tagged'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/broadcast_logger.rb:240:in `method_missing'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/logging.rb:25:in `tag_logger'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/logging.rb:18:in `perform_now'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/execution.rb:30:in `block in execute'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/railtie.rb:67:in `block (4 levels) in <class:Railtie>'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/reloader.rb:77:in `block in wrap'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/reloader.rb:74:in `wrap'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/railtie.rb:66:in `block (3 levels) in <class:Railtie>'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `instance_exec'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/execution.rb:28:in `execute'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activejob-7.1.3.2/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+<internal:kernel>:187:in `loop'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+/home/rulerpe/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2024-03-01 09:31:58 -0800
+SummaryTranslationChannel stopped streaming from summary_translation_channel_35
+Finished "/cable" [WebSocket] for ::1 at 2024-03-01 09:31:58 -0800
+Started GET "/cable" for ::1 at 2024-03-01 09:31:59 -0800
+Started GET "/cable" [WebSocket] for ::1 at 2024-03-01 09:31:59 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Registered connection (Z2lkOi8vZHV4aW4vVXNlci8zNQ)
+Started GET "/cable" for ::1 at 2024-03-01 09:31:59 -0800
+Started GET "/cable" [WebSocket] for ::1 at 2024-03-01 09:31:59 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Registered connection (Z2lkOi8vZHV4aW4vVXNlci8zNQ)
+SummaryTranslationChannel is transmitting the subscription confirmation
+SummaryTranslationChannel is streaming from summary_translation_channel_35
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:32:00 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 743)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:32:00 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 737)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2024-03-01 09:32:34 -0800
+Finished "/cable" [WebSocket] for ::1 at 2024-03-01 09:32:34 -0800
+SummaryTranslationChannel stopped streaming from summary_translation_channel_35
+Started GET "/cable" for ::1 at 2024-03-01 09:32:36 -0800
+Started GET "/cable" [WebSocket] for ::1 at 2024-03-01 09:32:36 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Registered connection (Z2lkOi8vZHV4aW4vVXNlci8zNQ)
+Started GET "/cable" for ::1 at 2024-03-01 09:32:36 -0800
+Started GET "/cable" [WebSocket] for ::1 at 2024-03-01 09:32:36 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Registered connection (Z2lkOi8vZHV4aW4vVXNlci8zNQ)
+SummaryTranslationChannel is transmitting the subscription confirmation
+SummaryTranslationChannel is streaming from summary_translation_channel_35
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:32:36 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 737)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:32:36 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 742)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2024-03-01 09:33:17 -0800
+Finished "/cable" [WebSocket] for ::1 at 2024-03-01 09:33:17 -0800
+SummaryTranslationChannel stopped streaming from summary_translation_channel_35
+Started GET "/cable" for ::1 at 2024-03-01 09:33:18 -0800
+Started GET "/cable" [WebSocket] for ::1 at 2024-03-01 09:33:18 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Registered connection (Z2lkOi8vZHV4aW4vVXNlci8zNQ)
+Started GET "/cable" for ::1 at 2024-03-01 09:33:18 -0800
+Started GET "/cable" [WebSocket] for ::1 at 2024-03-01 09:33:18 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Registered connection (Z2lkOi8vZHV4aW4vVXNlci8zNQ)
+SummaryTranslationChannel is transmitting the subscription confirmation
+SummaryTranslationChannel is streaming from summary_translation_channel_35
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:33:19 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 752)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:33:19 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 737)
+
+
+Finished "/cable" [WebSocket] for ::1 at 2024-03-01 09:37:24 -0800
+Finished "/cable" [WebSocket] for ::1 at 2024-03-01 09:37:24 -0800
+SummaryTranslationChannel stopped streaming from summary_translation_channel_35
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:38:15 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 16ms (Views: 1.6ms | ActiveRecord: 1.0ms | Allocations: 737)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:38:15 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 739)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:44:14 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 50ms (Views: 2.2ms | ActiveRecord: 17.5ms | Allocations: 3517)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:44:14 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 11ms (Views: 1.2ms | ActiveRecord: 0.9ms | Allocations: 737)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:44:19 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 737)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:44:19 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 737)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:44:22 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 737)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 09:44:22 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 738)
+
+
+Started PUT "/user_data" for 127.0.0.1 at 2024-03-01 09:44:24 -0800
+Processing by UsersController#update_user_from_token as HTML
+  Parameters: {"user"=>{"language"=>"en"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mUser Update (3.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "language" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-03-01 17:44:24.073597"], ["language", "en"], ["id", 35]]
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+Completed 200 OK in 19ms (Views: 0.6ms | ActiveRecord: 10.1ms | Allocations: 2442)
+
+
+Started POST "/upload_image" for 127.0.0.1 at 2024-03-01 09:44:30 -0800
+Processing by ImagesController#upload as HTML
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f2129d17710 @tempfile=#<Tempfile:/tmp/RackMultipart20240301-26371-svmpvq>, @content_type="image/jpeg", @original_filename="blob", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"blob\"\r\nContent-Type: image/jpeg\r\n">}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+[ActiveJob] Enqueued TextractJob (Job ID: fa62ff28-f593-4157-85cc-2d123d22f112) to Async(default) with arguments: 35, "en", "/tmp/RackMultipart20240301-26371-svmpvq"
+[ActiveJob] ↳ app/controllers/images_controller.rb:7:in `upload'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1242)
+
+
+[ActiveJob] [TextractJob] [fa62ff28-f593-4157-85cc-2d123d22f112] Performing TextractJob (Job ID: fa62ff28-f593-4157-85cc-2d123d22f112) from Async(default) enqueued at 2024-03-01T17:44:30.108637500Z with arguments: 35, "en", "/tmp/RackMultipart20240301-26371-svmpvq"
+[ActiveJob] [TextractJob] [fa62ff28-f593-4157-85cc-2d123d22f112] [ActionCable] Broadcasting to summary_translation_channel_35: {:stage=>"extracting_text", :message=>"Extracting text from image"}
+Started GET "/cable" for ::1 at 2024-03-01 09:44:30 -0800
+Started GET "/cable" [WebSocket] for ::1 at 2024-03-01 09:44:30 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Registered connection (Z2lkOi8vZHV4aW4vVXNlci8zNQ)
+Started GET "/cable" for ::1 at 2024-03-01 09:44:30 -0800
+Started GET "/cable" [WebSocket] for ::1 at 2024-03-01 09:44:30 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Registered connection (Z2lkOi8vZHV4aW4vVXNlci8zNQ)
+SummaryTranslationChannel is transmitting the subscription confirmation
+SummaryTranslationChannel is streaming from summary_translation_channel_35
+[ActiveJob] [TextractJob] [fa62ff28-f593-4157-85cc-2d123d22f112] Enqueued SummaryJob (Job ID: ce7b9103-94cf-440b-b90b-f1358bfa3e5d) to Async(default) with arguments: 35, "en", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002"
+[ActiveJob] [TextractJob] [fa62ff28-f593-4157-85cc-2d123d22f112] ↳ app/jobs/textract_job.rb:10:in `perform'
+[ActiveJob] [TextractJob] [fa62ff28-f593-4157-85cc-2d123d22f112] Performed TextractJob (Job ID: fa62ff28-f593-4157-85cc-2d123d22f112) from Async(default) in 2742.62ms
+[ActiveJob] [SummaryJob] [ce7b9103-94cf-440b-b90b-f1358bfa3e5d] Performing SummaryJob (Job ID: ce7b9103-94cf-440b-b90b-f1358bfa3e5d) from Async(default) enqueued at 2024-03-01T17:44:32.854904200Z with arguments: 35, "en", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002"
+[ActiveJob] [SummaryJob] [ce7b9103-94cf-440b-b90b-f1358bfa3e5d] [ActionCable] Broadcasting to summary_translation_channel_35: {:stage=>"summarizing_text", :message=>"Summarizing text."}
+SummaryTranslationChannel transmitting {"stage"=>"summarizing_text", "message"=>"Summarizing text."} (via streamed from summary_translation_channel_35)
+[ActiveJob] [SummaryJob] [ce7b9103-94cf-440b-b90b-f1358bfa3e5d] Enqueued TranslationJob (Job ID: f62863ca-b4d4-47bd-afcc-17ac00d0ff9a) to Async(default) with arguments: 35, "en", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002", {"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient needs to pay the amount due by the specified due date through various payment options mentioned in the letter."}
+[ActiveJob] [SummaryJob] [ce7b9103-94cf-440b-b90b-f1358bfa3e5d] ↳ app/jobs/summary_job.rb:10:in `perform'
+[ActiveJob] [SummaryJob] [ce7b9103-94cf-440b-b90b-f1358bfa3e5d] Performed SummaryJob (Job ID: ce7b9103-94cf-440b-b90b-f1358bfa3e5d) from Async(default) in 1958.2ms
+[ActiveJob] [TranslationJob] [f62863ca-b4d4-47bd-afcc-17ac00d0ff9a] Performing TranslationJob (Job ID: f62863ca-b4d4-47bd-afcc-17ac00d0ff9a) from Async(default) enqueued at 2024-03-01T17:44:34.812506600Z with arguments: 35, "en", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002", {"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient needs to pay the amount due by the specified due date through various payment options mentioned in the letter."}
+[ActiveJob] [TranslationJob] [f62863ca-b4d4-47bd-afcc-17ac00d0ff9a] [ActionCable] Broadcasting to summary_translation_channel_35: {:stage=>"translating_text", :message=>"Translating text."}
+SummaryTranslationChannel transmitting {"stage"=>"translating_text", "message"=>"Translating text."} (via streamed from summary_translation_channel_35)
+[ActiveJob] [TranslationJob] [f62863ca-b4d4-47bd-afcc-17ac00d0ff9a] Enqueued StoreProcessedDocumentJob (Job ID: d3517d34-9bde-47ed-8cfe-e2af2757ee90) to Async(default) with arguments: 35, "en", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002", {"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient needs to pay the amount due by the specified due date through various payment options mentioned in the letter."}, {"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient needs to pay the amount due by the specified due date through various payment options mentioned in the letter."}
+[ActiveJob] [TranslationJob] [f62863ca-b4d4-47bd-afcc-17ac00d0ff9a] ↳ app/jobs/translation_job.rb:10:in `perform'
+[ActiveJob] [TranslationJob] [f62863ca-b4d4-47bd-afcc-17ac00d0ff9a] Performed TranslationJob (Job ID: f62863ca-b4d4-47bd-afcc-17ac00d0ff9a) from Async(default) in 1986.47ms
+[ActiveJob] [StoreProcessedDocumentJob] [d3517d34-9bde-47ed-8cfe-e2af2757ee90] Performing StoreProcessedDocumentJob (Job ID: d3517d34-9bde-47ed-8cfe-e2af2757ee90) from Async(default) enqueued at 2024-03-01T17:44:36.809070900Z with arguments: 35, "en", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002", {"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient needs to pay the amount due by the specified due date through various payment options mentioned in the letter."}, {"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient needs to pay the amount due by the specified due date through various payment options mentioned in the letter."}
+[ActiveJob] [StoreProcessedDocumentJob] [d3517d34-9bde-47ed-8cfe-e2af2757ee90]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+[ActiveJob] [StoreProcessedDocumentJob] [d3517d34-9bde-47ed-8cfe-e2af2757ee90]   ↳ app/jobs/store_processed_document_job.rb:7:in `perform'
+[ActiveJob] [StoreProcessedDocumentJob] [d3517d34-9bde-47ed-8cfe-e2af2757ee90]   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [StoreProcessedDocumentJob] [d3517d34-9bde-47ed-8cfe-e2af2757ee90]   ↳ app/jobs/store_processed_document_job.rb:8:in `perform'
+[ActiveJob] [StoreProcessedDocumentJob] [d3517d34-9bde-47ed-8cfe-e2af2757ee90]   [1m[36mSummaryTranslation Create (7.0ms)[0m  [1m[32mINSERT INTO "summary_translations" ("original_title", "translated_title", "original_body", "translated_body", "original_action", "translated_action", "original_language", "translation_language", "created_at", "updated_at", "user_id", "extracted_text") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["original_title", "NVEnergy Bill Summary"], ["translated_title", "NVEnergy Bill Summary"], ["original_body", "The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options."], ["translated_body", "The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options."], ["original_action", "The recipient needs to pay the amount due by the specified due date through various payment options mentioned in the letter."], ["translated_action", "The recipient needs to pay the amount due by the specified due date through various payment options mentioned in the letter."], ["original_language", nil], ["translation_language", "en"], ["created_at", "2024-03-01 17:44:36.937509"], ["updated_at", "2024-03-01 17:44:36.937509"], ["user_id", 35], ["extracted_text", "NVEnergy PAGE OF 2 John Doe Go B A16 B16 Service 123 Maple St Paperless 999999603 Address: Las Vegas, NV 89105 Sign up at invenergy.com/paymyway Electric Historical Usage Data Avg kWh Per Day By Month DATE DUE: Usage No Avg kWh Jul 7,2015 History Days kWh Per Day 45 AMOUNT DUE: $104.70 This Bill 33 700 21.2 40 Last Bill 29 1,080 37.2 Account Number: 3011111111122222223 30 Last Year 33 1,440 43.6 20 Customer Number 111111111 Avg Cost Per Day This Bill: $3.17 15 Premises Number 2222222 Check out MyAccount for helpful tools that make it easy for 10 Billing Date Jun 19,2015 you to manage your energy usage and monitor your costs I I I I I I I I I Next Read Date: , J A S O N D J F M A M J Jul 15,2015 Log in today at nvenergy.com. 2014 2015 Account Summary Electric: Residential Service Previous Account Balance 154.28 Meter Service Service Period Bill Meter Readings Meter Number Type From To Days Previous Current Mult Usage Payment Jun 5, 2015 154.28CR CC011111111 kWh May 2015 Jun 16,2015 33 5,336 6.036 1 700 Electric Charges 104.70 Electric Consumption 700,000 kWh x 11858 83.00 Current Amount Due $104.70 Deferred Energy Adjustment 700.000 kWh x 00291 2.04 Temporary Green Power Financing 700,000 kWh x 00068 48 A shovel hitting an Renewable Energy Program 700,000 kWh x 00083CR 58 CR underground power line can Energy Efficiency Charge 700,000 kWh x 00349 2.44 be as dangerous as contact with an overhead line. Play Energy Efficiency Amoritization 700.000 kWh x 00095CR 67 CR it safe when planting trees, Basic Service Charge 12.75 installing sprinklers or other Local Government Fee 5% 4.97 projects that involve digging. Universal Energy Charge 700.000 kWh x 00039 27 811 Total Electric Service Amount $ 104.70 Know what's below. Call before you dig. continued on the back of this page Customer Service: (702) 402-5555 or (800) 331-3103 Toll free 24/7, excluding holidays Office 6226 W Sahara Ave, Las Vegas, NV, 89146 Emergencies: (702) 402-2900 Please return this portion with payment NVEnergy ACCOUNT NUMBER: 30011111111122222223 DUE DATE: Jul 7, 2015 AMOUNT DUE: $104.70 Service 123 Maple St Enter Amount Address: Las Vegas, NV 8905 Enclosed: $ Payment Options: Online at Invenergy com or call (844)343-3719 At any of our authorized Shop&Pay locations By phone: (800)253-8084 (debit/credit card) By mail P.O. Box 30150. Reno, NV 89520-0024 John Doe 123 Maple St Las Vegas, NV 89105 89520 3011111111122222223 0000104700 00000104700 0 002"]]
+[ActiveJob] [StoreProcessedDocumentJob] [d3517d34-9bde-47ed-8cfe-e2af2757ee90]   ↳ app/jobs/store_processed_document_job.rb:8:in `perform'
+[ActiveJob] [StoreProcessedDocumentJob] [d3517d34-9bde-47ed-8cfe-e2af2757ee90]   [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [StoreProcessedDocumentJob] [d3517d34-9bde-47ed-8cfe-e2af2757ee90]   ↳ app/jobs/store_processed_document_job.rb:8:in `perform'
+[ActiveJob] [StoreProcessedDocumentJob] [d3517d34-9bde-47ed-8cfe-e2af2757ee90] [ActionCable] Broadcasting to summary_translation_channel_35: {:stage=>"summary_translation_completed", :message=>"Summary translation completed.", :translated_json=>{"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient needs t...
+[ActiveJob] [StoreProcessedDocumentJob] [d3517d34-9bde-47ed-8cfe-e2af2757ee90] Performed StoreProcessedDocumentJob (Job ID: d3517d34-9bde-47ed-8cfe-e2af2757ee90) from Async(default) in 137.85ms
+SummaryTranslationChannel transmitting {"stage"=>"summary_translation_completed", "message"=>"Summary translation completed.", "translated_json"=>{"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient need... (via streamed from summary_translation_channel_35)

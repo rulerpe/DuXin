@@ -10,7 +10,7 @@ import {
   UpdateTempUserResponse,
 } from '../types';
 
-const BASE_URL = 'https://localhost:3001';
+const BASE_URL = import.meta.env.API_URL || 'https://localhost:3001';
 
 axios.defaults.baseURL = BASE_URL;
 axios.defaults.withCredentials = true;
