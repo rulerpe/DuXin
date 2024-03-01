@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     # Create a new user, or get existing user, and send verification code to phone
     @user = User.find_or_initialize_by(phone_number: user_params[:phone_number])
 
-    if @user.new_record? || @user.save
+    if @user.save
       OtpVerificationService.new.start_verification(@user.phone_number)
       render json: { message: 'Verification code sent. Please verify your phone number.', status: :ok }
     else
