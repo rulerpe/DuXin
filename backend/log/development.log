@@ -18743,3 +18743,63 @@ SummaryTranslationChannel transmitting {"stage"=>"translating_text", "message"=>
 [ActiveJob] [StoreProcessedDocumentJob] [d3517d34-9bde-47ed-8cfe-e2af2757ee90] [ActionCable] Broadcasting to summary_translation_channel_35: {:stage=>"summary_translation_completed", :message=>"Summary translation completed.", :translated_json=>{"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient needs t...
 [ActiveJob] [StoreProcessedDocumentJob] [d3517d34-9bde-47ed-8cfe-e2af2757ee90] Performed StoreProcessedDocumentJob (Job ID: d3517d34-9bde-47ed-8cfe-e2af2757ee90) from Async(default) in 137.85ms
 SummaryTranslationChannel transmitting {"stage"=>"summary_translation_completed", "message"=>"Summary translation completed.", "translated_json"=>{"title"=>"NVEnergy Bill Summary", "body"=>"The letter provides a summary of the recipient's electric usage history, current bill amount, and payment options.", "action"=>"The recipient need... (via streamed from summary_translation_channel_35)
+Started GET "/cable" for ::1 at 2024-03-01 10:05:51 -0800
+Started GET "/cable" for 127.0.0.1 at 2024-03-01 10:05:51 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable" [WebSocket] for ::1 at 2024-03-01 10:05:51 -0800
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2024-03-01 10:05:51 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 10:05:51 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Registered connection (Z2lkOi8vZHV4aW4vVXNlci8zNQ)
+Registered connection (Z2lkOi8vZHV4aW4vVXNlci8zNQ)
+SummaryTranslationChannel is transmitting the subscription confirmation
+SummaryTranslationChannel is streaming from summary_translation_channel_35
+Completed 200 OK in 96ms (Views: 0.7ms | ActiveRecord: 14.9ms | Allocations: 24760)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 10:05:51 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 750)
+
+
+Unsubscribing from channel: {"channel":"SummaryTranslationChannel"}
+SummaryTranslationChannel stopped streaming from summary_translation_channel_35
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2024-03-01 10:05:52 -0800
+Started PUT "/user_data" for 127.0.0.1 at 2024-03-01 10:05:54 -0800
+Processing by UsersController#update_user_from_token as HTML
+  Parameters: {"user"=>{"language"=>"zh"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "language" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-03-01 18:05:54.126334"], ["language", "zh"], ["id", 35]]
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+Completed 200 OK in 27ms (Views: 0.6ms | ActiveRecord: 13.0ms | Allocations: 3479)
+
+
+Started PUT "/user_data" for 127.0.0.1 at 2024-03-01 10:05:55 -0800
+Processing by UsersController#update_user_from_token as HTML
+  Parameters: {"user"=>{"language"=>"en"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mUser Update (3.9ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "language" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-03-01 18:05:55.929826"], ["language", "en"], ["id", 35]]
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+Completed 200 OK in 21ms (Views: 0.6ms | ActiveRecord: 9.2ms | Allocations: 2449)
+
+
