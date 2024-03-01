@@ -6,9 +6,9 @@ class TextractService
   def initialize(image_path)
     @image_path = image_path
     @textract_client = Aws::Textract::Client.new(
-      access_key_id: Rails.application.credentials.aws[:access_key_id],
-      secret_access_key: Rails.application.credentials.aws[:secret_access_key],
-      region: Rails.application.credentials.aws[:region]
+      access_key_id: ENV['aws_access_key_id'],
+      secret_access_key: ENV['aws_secret_access_key'],
+      region: ENV['aws_region']
     )
   end
 

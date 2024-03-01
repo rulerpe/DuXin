@@ -50,6 +50,7 @@ gem 'rack-cors'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -59,6 +60,6 @@ group :development do
   gem 'rubocop-rails', require: false
 end
 
-gem "langchainrb", "~> 0.9.3"
+gem 'langchainrb', '~> 0.9.3'
 
-gem "ruby-openai", "~> 6.3"
+gem 'ruby-openai', '~> 6.3'

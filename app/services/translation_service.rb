@@ -14,7 +14,7 @@ class TranslationService
       frequencyPenalty: 0.4,
       presencePenalty: 0.4
     }
-    @llm = Langchain::LLM::OpenAI.new(api_key: Rails.application.credentials.openai[:api_key], llm_options:)
+    @llm = Langchain::LLM::OpenAI.new(api_key: ENV['openai_api_key'], llm_options:)
   end
 
   def call
