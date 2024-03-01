@@ -186,7 +186,7 @@ GEM
     parser (3.3.0.5)
       ast (~> 2.4.1)
       racc
-    pg (1.5.5)
+    pg (1.5.6)
     pragmatic_segmenter (0.3.23)
       unicode
     psych (5.1.2)
@@ -321,6 +321,7 @@ DEPENDENCIES
   rubocop-rails
   ruby-openai (~> 6.3)
   twilio-ruby
+  tzinfo-data
 
 RUBY VERSION
    ruby 3.3.0p0

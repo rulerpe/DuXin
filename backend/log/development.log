@@ -18803,3 +18803,46 @@ Processing by UsersController#update_user_from_token as HTML
 Completed 200 OK in 21ms (Views: 0.6ms | ActiveRecord: 9.2ms | Allocations: 2449)
 
 
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 10:24:16 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 159ms (Views: 0.8ms | ActiveRecord: 14.2ms | Allocations: 32415)
+
+
+Started GET "/user_data" for 127.0.0.1 at 2024-03-01 10:24:16 -0800
+Processing by UsersController#user_from_token as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 766)
+
+
+Started PUT "/user_data" for 127.0.0.1 at 2024-03-01 10:24:19 -0800
+Processing by UsersController#update_user_from_token as HTML
+  Parameters: {"user"=>{"language"=>"zh"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "language" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-03-01 18:24:19.344767"], ["language", "zh"], ["id", 35]]
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 13.7ms | Allocations: 3492)
+
+
+Started PUT "/user_data" for 127.0.0.1 at 2024-03-01 10:24:31 -0800
+Processing by UsersController#update_user_from_token as HTML
+  Parameters: {"user"=>{"language"=>"en"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/services/authentication_service.rb:12:in `get_user_from_token'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mUser Update (4.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "language" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-03-01 18:24:31.565127"], ["language", "en"], ["id", 35]]
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `update_user_from_token'
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 8.8ms | Allocations: 2448)
+
+
