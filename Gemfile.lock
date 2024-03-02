@@ -245,6 +245,10 @@ GEM
     rb_sys (0.9.90)
     rdoc (6.6.2)
       psych (>= 4.0.0)
+    redis (5.1.0)
+      redis-client (>= 0.17.0)
+    redis-client (0.20.0)
+      connection_pool
     regexp_parser (2.9.0)
     reline (0.4.3)
       io-console (~> 0.5)
@@ -322,6 +326,7 @@ DEPENDENCIES
   rack-attack
   rack-cors
   rails (~> 7.1.3)
+  redis (>= 4.0.1)
   rubocop
   rubocop-rails
   ruby-openai (~> 6.3)
