@@ -4,7 +4,7 @@ class SummaryTranslationsController < ApplicationController
 
   # GET /summary_translations
   def index
-    @summary_translations = @current_user.summary_translations.all
+    @summary_translations = @current_user.summary_translations.order(created_at: :desc).page(params[:page]).per(10)
 
     render json: @summary_translations
   end

@@ -66,6 +66,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def logout
+    cookies.delete(:auth_token, domain: :all)
+    render json: { message: 'Logged out successfully' }, status: :ok
+  end
+
   # DELETE /users/1
   def destroy
     @user.destroy!

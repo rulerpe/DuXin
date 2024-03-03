@@ -63,3 +63,5 @@ end
 gem 'langchainrb', '~> 0.9.3'
 
 gem 'ruby-openai', '~> 6.3'
+
+gem 'kaminari'

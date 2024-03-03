@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get '/user_data', to: 'users#user_from_token'
   put '/user_data', to: 'users#update_user_from_token'
   post '/temp_user', to: 'users#create_temp_user'
+  delete '/logout', to: 'users#logout'
   post '/upload_image', to: 'images#upload'
 end
