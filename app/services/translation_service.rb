@@ -19,7 +19,7 @@ class TranslationService
 
   def call
     prompt_template = "You are a professional translator, ensuring native fluency and accurate description, immerse yourself in {language} language resources.
-    Translate the title, body, and action from English to {language}, ensuring that all names and company names remain untranslated.
+    Translate the title, body, and action to {language}, ensuring that all names and company names remain untranslated.
 
     title: {title}
     body: {body}
@@ -28,7 +28,7 @@ class TranslationService
     {format_instructions}
     "
 
-    json_schema = {
+    translation_schema = {
       type: 'object',
       properties: {
         title: {
@@ -47,7 +47,7 @@ class TranslationService
       required: %w[title body action],
       additionalProperties: false
     }
-    parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(json_schema)
+    parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(translation_schema)
     prompt = Langchain::Prompt::PromptTemplate.new(template: prompt_template,
                                                    input_variables: %w[language title body action
                                                                        format_instructions])

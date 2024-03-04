@@ -3,7 +3,6 @@ class StoreProcessedDocumentJob < ApplicationJob
   queue_as :default
 
   def perform(user_id, user_language, extracted_text, summarized_json, translated_json)
-    puts 'StoreProcessedDcoumentJob'
     user = User.find(user_id)
     user.summary_translations.create(
       original_title: summarized_json['title'],
@@ -18,6 +17,9 @@ class StoreProcessedDocumentJob < ApplicationJob
     ActionCable.server.broadcast("summary_translation_channel_#{user_id}",
                                  { stage: 'summary_translation_completed', message: 'Summary translation completed.',
                                    translated_json: })
-    # ActionCable.server.remote_connections.where("summary_translation_channel_#{user_id}").disconnect
+  rescue StandardError => e
+    ActionCable.server.broadcast("summary_translation_channel_#{user_id}",
+                                 { stage: 'error',
+                                   message: "An error occurred: #{e.message}" })
   end
 end

@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
   before_action :authenticate_request
 
+  # POST /upload_image
   def upload
     if params[:image].present?
       image_path = params[:image].tempfile.path

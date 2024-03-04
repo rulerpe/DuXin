@@ -2,6 +2,7 @@ class OtpVerificationsController < ApplicationController
   skip_before_action :authenticate_request, only: [:verify_user_otp]
   include ActionController::Cookies
 
+  # POST /otp/verify
   def verify_user_otp
     user = User.find_by(phone_number: params[:phone_number])
 

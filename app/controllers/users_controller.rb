@@ -57,6 +57,12 @@ class UsersController < ApplicationController
     end
   end
 
+  # DELETE /logout
+  def logout
+    cookies.delete(:auth_token, domain: :all)
+    render json: { message: 'Logged out successfully' }, status: :ok
+  end
+
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
@@ -64,11 +70,6 @@ class UsersController < ApplicationController
     else
       render json: @user.errors, status: :unprocessable_entity
     end
-  end
-
-  def logout
-    cookies.delete(:auth_token, domain: :all)
-    render json: { message: 'Logged out successfully' }, status: :ok
   end
 
   # DELETE /users/1

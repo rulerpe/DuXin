@@ -8,5 +8,8 @@ class TextractJob < ApplicationJob
     extracted_text = TextractService.new(image_path).call
 
     SummaryJob.perform_later(user_id, user_language, extracted_text)
+  rescue StandardError => e
+    ActionCable.server.broadcast("summary_translation_channel_#{user_id}",
+                                 { stage: 'error', message: "An error occurred: #{e.message}" })
   end
 end

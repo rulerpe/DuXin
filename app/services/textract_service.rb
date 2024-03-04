@@ -14,11 +14,12 @@ class TextractService
 
   def call
     file = File.read(@image_path)
-    response = @textract_client.detect_document_text({
-                                                       document: {
-                                                         bytes: file
-                                                       }
-                                                     })
+    document = {
+      document: {
+        bytes: file
+      }
+    }
+    response = @textract_client.detect_document_text(document)
 
     filter_blocks(response.blocks)
   end

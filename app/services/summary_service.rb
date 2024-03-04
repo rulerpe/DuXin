@@ -26,26 +26,26 @@ class SummaryService
     {format_instructions}
     "
 
-    json_schema = {
+    summary_schema = {
       type: 'object',
       properties: {
         title: {
           type: 'string',
-          description: "A short title that is concise, descriptive, and directly reflective of the summary's main content."
+          description: 'Summary title'
         },
         body: {
           type: 'string',
-          description: 'Summarize the letter, focusing on the main purpose, any offers or requests made. Keep the summary concise, within two sentences.'
+          description: 'Summary body'
         },
         action: {
           type: 'string',
-          description: 'Any actions that the recipient needs to take in one sentance.'
+          description: 'Summary action'
         }
       },
       required: %w[title body action],
       additionalProperties: false
     }
-    parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(json_schema)
+    parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(summary_schema)
     prompt = Langchain::Prompt::PromptTemplate.new(template: prompt_template,
                                                    input_variables: %w[
                                                      text format_instructions

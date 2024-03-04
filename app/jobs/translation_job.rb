@@ -9,5 +9,8 @@ class TranslationJob < ApplicationJob
 
     StoreProcessedDocumentJob.perform_later(user_id, user_language, extracted_text,
                                             summarized_json, translated_json)
+  rescue StandardError => e
+    ActionCable.server.broadcast("summary_translation_channel_#{user_id}",
+                                 { stage: 'error', message: "An error occurred: #{e.message}" })
   end
 end
