@@ -4,7 +4,7 @@
 <br />
 <div align="center">
 
-<h1 align="center">Duxin (Leter Translator and Summarizer)</h3>
+<h1 align="center">Duxin (Letter Translator and Summarizer)</h3>
 
   <p align="center">
     Empowering non English speaker with seamless mail translation and summarization
@@ -41,7 +41,7 @@ The backend Rails api lives in this repo, [click here to checkout the frontend R
 
 - **Accurate Translation:** Receive translations of the summarized content in your native language. Using LangChain and OpenAI API
 
-- **User-Friendly Interface:** Designed with simplicity in mind, large font, and clear instructions. No complex sign up, only need phone number using Twilio.
+- **User-Friendly Interface:** Designed with simplicity in mind, large font, and clear instructions. No complex signup, only need phone number for OTP signup with Twilio API.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -53,7 +53,7 @@ The backend Rails api lives in this repo, [click here to checkout the frontend R
 5. **Read:** Display translated summary for easy reading
 - **optional:** sigup with just phone number to track and manange summary history.
 
-(Signup is using OTP from Twilio, it is current still work in prgress, but you can sigin with test account to check the feature out. Test phone number: 1234567890, test otp code: 123456)
+(Signup is using OTP from Twilio, it is current still work in prgress, but you can signin with a test account to check the feature out. Test phone number: 1234567890, test otp code: 123456)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
