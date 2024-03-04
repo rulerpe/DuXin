@@ -1,12 +1,37 @@
 require 'langchain'
 
 # Translate the summary with OpenAI GPT
-# Using LangChain to format and get result in JSON
+# Use LangChiain to format prompt and get result in JSON
 class TranslationService
   include ApplicationHelper
+
+  PROMPT_TEMPLATE = <<~TEMPLATE.freeze
+    You are a professional translator, ensuring native fluency and accurate description,
+    immerse yourself in {language} language resources. Ensuring that all names and company names remain untranslated.
+    {format_instructions}
+    title: {title}
+    body: {body}
+    action: {action}
+  TEMPLATE
+
   def initialize(user_language, summarized_json)
     @language_name = language_name(user_language)
     @summarized_json = summarized_json
+    @llm = initialize_llm
+  end
+
+  def call
+    translation_schema = generate_translation_schema
+    parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(translation_schema)
+    prompt_text = format_prompt(parser)
+
+    llm_response = @llm.chat(messages: [{ role: 'user', content: prompt_text }]).completion
+    parser.parse(llm_response)
+  end
+
+  private
+
+  def initialize_llm
     llm_options = {
       temperature: 0.2,
       modelName: 'gpt-3.5-turbo',
@@ -14,51 +39,31 @@ class TranslationService
       frequencyPenalty: 0.4,
       presencePenalty: 0.4
     }
-    @llm = Langchain::LLM::OpenAI.new(api_key: ENV['openai_api_key'], llm_options:)
+    Langchain::LLM::OpenAI.new(api_key: ENV['openai_api_key'], llm_options:)
   end
 
-  def call
-    prompt_template = "You are a professional translator, ensuring native fluency and accurate description, immerse yourself in {language} language resources.
-    Translate the title, body, and action to {language}, ensuring that all names and company names remain untranslated.
-
-    title: {title}
-    body: {body}
-    action: {action}
-
-    {format_instructions}
-    "
-
-    translation_schema = {
+  def generate_translation_schema
+    {
       type: 'object',
       properties: {
-        title: {
-          type: 'string',
-          description: 'Translate title.'
-        },
-        body: {
-          type: 'string',
-          description: 'Translate body.'
-        },
-        action: {
-          type: 'string',
-          description: 'Translate action.'
-        }
+        title: { type: 'string', description: "Translate title to #{@language_name}." },
+        body: { type: 'string', description: "Translate body to #{@language_name}." },
+        action: { type: 'string', description: "Translate action to #{@language_name}." }
       },
       required: %w[title body action],
       additionalProperties: false
     }
-    parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(translation_schema)
-    prompt = Langchain::Prompt::PromptTemplate.new(template: prompt_template,
-                                                   input_variables: %w[language title body action
-                                                                       format_instructions])
-    prompt_text = prompt.format(language: @language_name,
-                                title: @summarized_json['title'],
-                                body: @summarized_json['body'],
-                                action: @summarized_json['action'],
-                                format_instructions: parser.get_format_instructions)
-    llm_response = @llm.chat(messages: [{ role: 'user',
-                                          content: prompt_text }]).completion
+  end
 
-    parser.parse(llm_response)
+  def format_prompt(parser)
+    prompt = Langchain::Prompt::PromptTemplate.new(template: PROMPT_TEMPLATE,
+                                                   input_variables: %w[language title body action format_instructions])
+    prompt.format(
+      language: @language_name,
+      title: @summarized_json['title'],
+      body: @summarized_json['body'],
+      action: @summarized_json['action'],
+      format_instructions: parser.get_format_instructions
+    )
   end
 end

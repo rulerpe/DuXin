@@ -3,8 +3,21 @@ class StoreProcessedDocumentJob < ApplicationJob
   queue_as :default
 
   def perform(user_id, user_language, extracted_text, summarized_json, translated_json)
+    store_summary_translation(user_id, user_language, extracted_text, summarized_json, translated_json)
+    ActionCable.server.broadcast("summary_translation_channel_#{user_id}",
+                                 { stage: 'summary_translation_completed', message: 'Summary translation completed.',
+                                   translated_json: })
+  rescue StandardError => e
+    ActionCable.server.broadcast("summary_translation_channel_#{user_id}",
+                                 { stage: 'error',
+                                   message: "An error occurred: #{e.message}" })
+  end
+
+  private
+
+  def store_summary_translation(user_id, user_language, extracted_text, summarized_json, translated_json)
     user = User.find(user_id)
-    user.summary_translations.create(
+    user.summary_translations.create!(
       original_title: summarized_json['title'],
       original_body: summarized_json['body'],
       original_action: summarized_json['action'],
@@ -14,12 +27,5 @@ class StoreProcessedDocumentJob < ApplicationJob
       extracted_text:,
       translation_language: user_language
     )
-    ActionCable.server.broadcast("summary_translation_channel_#{user_id}",
-                                 { stage: 'summary_translation_completed', message: 'Summary translation completed.',
-                                   translated_json: })
-  rescue StandardError => e
-    ActionCable.server.broadcast("summary_translation_channel_#{user_id}",
-                                 { stage: 'error',
-                                   message: "An error occurred: #{e.message}" })
   end
 end
