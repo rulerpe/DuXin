@@ -67,5 +67,5 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
-  config.action_cable.allowed_request_origins = ['https://localhost:5173']
+  config.action_cable.allowed_request_origins = ['https://localhost:5000']
 end

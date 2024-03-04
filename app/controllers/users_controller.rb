@@ -35,7 +35,11 @@ class UsersController < ApplicationController
     @user = User.find_or_initialize_by(phone_number: user_params[:phone_number])
 
     if @user.save
-      OtpVerificationService.new.start_verification(@user.phone_number)
+      # skip verification for test user
+      puts "test number #{ENV['test_phone_number']}"
+      if @user.phone_number != ENV['test_phone_number']
+        OtpVerificationService.new.start_verification(@user.phone_number)
+      end
       render json: { message: 'Verification code sent. Please verify your phone number.', status: :ok }
     else
       render json: @user.errors, status: :unprocessable_entity
