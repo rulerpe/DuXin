@@ -19,7 +19,7 @@
 
 This project is insprired by my dad a non-tech savvy, not proficient in English, senior immgrant. People like him has a strong need to understand their mail letter. Thats why I created Duxin a letter translator and summarizer with a intuitive application designed to help non-tech savvy seniors and non English speaker effortlessly understand their mail in their native language.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a target="_blank" href="#readme-top">back to top</a>)</p>
 
 
 
@@ -35,13 +35,13 @@ The backend Rails api lives in this repo, [click here to checkout the frontend R
 
 ## Features
 
-- **Instant Mail Scanning:** Utilize your device's camera to capture a picture of the mail letter you wish to understand. Using AWS Textract for OCR to extract text from the image.
+- **Instant Mail Scanning:** Utilize your device's camera to capture a picture of the mail letter you wish to understand. Using [AWS Textract](https://aws.amazon.com/textract/) for OCR to extract text from the image.
 
-- **Automated Summary:** Provide a concise summary of the letter's contents, highlighting essential information at a glance. Using LangChain to build prompt then send to OpenAI API.
+- **Automated Summary:** Provide a concise summary of the letter's contents, highlighting essential information at a glance. Using [LangChain](https://github.com/andreibondarev/langchainrb) to build prompt then send to [OpenAI API](https://openai.com/blog/openai-api).
 
-- **Accurate Translation:** Receive translations of the summarized content in your native language. Using LangChain and OpenAI API
+- **Accurate Translation:** Receive translations of the summarized content in your native language. Using [LangChain](https://github.com/andreibondarev/langchainrb) and [OpenAI API](https://openai.com/blog/openai-api)
 
-- **User-Friendly Interface:** Designed with simplicity in mind, large font, and clear instructions. No complex signup, only need phone number for OTP signup with Twilio API.
+- **User-Friendly Interface:** Designed with simplicity in mind, large font, and clear instructions. No complex signup, only need phone number for OTP signup with [Twilio API](https://www.twilio.com/en-us/user-authentication-identity/verify).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
