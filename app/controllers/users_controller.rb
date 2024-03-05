@@ -1,19 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show update destroy]
-  skip_before_action :authenticate_request, only: %i[create create_temp_user index show destroy]
+  skip_before_action :authenticate_request, only: %i[create create_temp_user]
   include ActionController::Cookies
-
-  # GET /users
-  def index
-    @users = User.all
-
-    render json: @users
-  end
-
-  # GET /users/1
-  def show
-    render json: @user
-  end
 
   # GET /user_data
   def user_from_token
@@ -76,17 +63,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  def destroy
-    @user.destroy!
-  end
-
   private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_user
-    @user = User.find(params[:id])
-  end
 
   # Only allow a list of trusted parameters through.
   def user_params
