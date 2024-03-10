@@ -6,12 +6,12 @@ class TranslationService
   include ApplicationHelper
 
   PROMPT_TEMPLATE = <<~TEMPLATE.freeze
-    You are a professional translator, ensuring native fluency and accurate description,
-    immerse yourself in {language} language resources. Ensuring that all names and company names remain untranslated.
-    {format_instructions}
-    title: {title}
-    body: {body}
-    action: {action}
+    You are a highly skilled translator with expertise in many languages.
+    Your task is to identify the language of the text I provide and accurately translate it into the {language} language while preserving the meaning, tone, and nuance of the original text. Please maintain proper grammar, spelling, and punctuation in the translated version.
+      {format_instructions}
+      title: {title}
+      body: {body}
+      action: {action}
   TEMPLATE
 
   def initialize(user_language, summarized_json)

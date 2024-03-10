@@ -11,42 +11,6 @@ class OtpVerificationsController < ApplicationController
     verify_with_otp_service
   end
 
-  # def verify_user_otp
-  #   user = User.find_by(phone_number: params[:phone_number])
-
-  #   if user.nil?
-  #     render json: { error: 'User not found.' }, status: :not_found
-  #     return
-  #   end
-
-  #   if user.locked_at? && user.locked_at > 10.minutes.ago
-  #     render json: { error: 'Account temporarily locked.' }, status: :locked
-  #     return
-  #   end
-
-  #   if user.phone_number == ENV['test_phone_number'] and params[:otp_code] == ENV['test_otp_code']
-  #     token = assign_token_to_cookie(user.id)
-  #     render json: { message: 'Phone number verified successfully.', token:, user: }, status: :ok
-  #     return
-  #   end
-
-  #   is_verified = OtpVerificationService.new.check_verification(user.phone_number, params[:otp_code])
-  #   if is_verified
-  #     user.reset_failed_attempts
-  #     user.update(verified: true)
-
-  #     # If temp_uuid exist, transfer image record to new account.
-  #     transfer_summary_translations(params[:temp_uuid], user) if params[:temp_uuid].present?
-
-  #     token = assign_token_to_cookie(user.id)
-  #     render json: { message: 'Phone number verified successfully.', token:, user: }, status: :ok
-  #   else
-  #     user.increment!(:failed_attempts)
-  #     user.lock_account if user.failed_attempts >= 5
-  #     render json: { error: 'Verification failed. Please try again.' }, status: :unprocessable_entity
-  #   end
-  # end
-
   private
 
   attr_reader :user
